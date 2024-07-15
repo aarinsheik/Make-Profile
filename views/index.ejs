@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoDB-CRUD</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="w-full h-full bg-[#2D3250] text-[#F8EDE3] p-10 overflow-hidden">
+
+        <a href='/' class="inline-block text-[#F8EDE3] border-b-2 border-[#F8EDE3] text-md">Create User</a>
+        <a href='/read' class="inline-block ml-10 text-[#F8EDE3] border-b-2 border-[#F8EDE3] text-md">View User</a>
+        
+        <div class="user_input mb-16 mt-12">
+            <h1 class="text-3xl tracking-tighter mb-3">Create User</h1>
+            <form class="flex gap-3" action="/create" method="post">
+                <input class="px-5 py-2 border-2 bg-[#2D3250] border-[#F8EDE3] text-[#F8EDE3] outline-none rounded-lg" required name="name" type="text" placeholder="Name">
+                <input class="px-5 py-2 border-2 bg-[#2D3250] border-[#F8EDE3] text-[#F8EDE3] outline-none rounded-lg" required name="email" type="email" placeholder="Email">
+                <input class="px-5 py-2 border-2 bg-[#2D3250] border-[#F8EDE3] text-[#F8EDE3] outline-none rounded-lg" required name="imageUrl" type="url" placeholder="Image URL">
+                <button class="px-5 py-2 bg-[#F6B17A] rounded-lg text-[#2D3250] text-lg">Create</button>
+            </form>
+        </div>
+        <hr>
+
+        <div class="about text-xl text-[#FCFFE0] tracking-tighter mt-12 mx-40 text-justify">
+            <h1 >This site leverages MongoDB for robust storage of user details, ensuring scalability and flexibility. 
+                It employs the Express.js framework to manage create, update, and delete operations, providing an efficient 
+                and streamlined backend architecture for handling user data operations with reliability and performance.</h1>
+
+            <div class="w-full flex justify-center"><h1 class="text-5xl tracking-tighter text-center mt-10 border-[#FCFFE0] border-b-2 pb-2 w-72">Tech Stack</h1></div>
+            
+            <div class="techStackImg w-full flex justify-around mt-10 ">
+                <img src="/images/MongoDB_img.png" class="h-64">
+                <img src="/images/nodeJS_img.png" class="h-64">
+                <img src="/images/expressJS_img.png" class="mt-5 h-56">
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

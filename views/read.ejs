@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoDB-CRUD</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="w-full min-h-full bg-[#2D3250] text-[#F8EDE3] p-10">
+        
+        <a href='/' class="inline-block text-[#F8EDE3] border-b-2 border-[#F8EDE3] text-md">Create User</a>
+        <a href='/read' class="inline-block ml-10 text-[#F8EDE3] border-b-2 border-[#F8EDE3] text-md">View User</a>
+
+        <div class="view_users mt-12">
+            <h1 class="text-3xl tracking-tighter mb-5">All Users</h1>
+            <div class="all_users flex justify-start flex-wrap gap-12">
+
+                <% if( allUsers.length>0 ){  %>
+                <%    allUsers.forEach( (user)=>{ %>
+            
+                        <div class="w-64 bg-[#7077A1] rounded-lg p-5">
+                            <div class="img w-full h-60 bg-[#fff] rounded-lg overflow-hidden"><img class="w-full h-full object-cover" src="<%= user.image %>"></div>
+                            <h1 class="text-2xl mt-3 text-[#FEFBD8]"><%= user.name %></h1>
+                            <h1 class="text-md tracking-tighter text-[#FEFBD8]"><%= user.email %></h1>
+                            <div class="mt-5 flex justify-between">
+                                <a href='/edit/<%= user._id %>' class="bg-[#526D82] rounded-full px-4 py-1 text-sm">Edit</a>
+                                <a href='/delete/<%= user._id %>' class="bg-[#526D82] rounded-full px-2 py-1 text-sm ">Delete</a>  <!-- To deletd the user, we are sending the user's id (user._id) --> 
+                            </div>
+                        </div>
+                    
+                    <% }) %>
+                <% } else{ %>
+
+                    <h1 class="text-xl tracking-tighter mb-5">No user is created yet...</h1>
+                <% } %>
+                
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

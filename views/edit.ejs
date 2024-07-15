@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoDB-CRUD</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="w-full h-full bg-[#2D3250] text-[#F8EDE3] p-10">
+
+        <a href='/read' class="inline-block ml-1 text-[#F8EDE3] border-b-2 border-[#F8EDE3] text-md">Go Back</a>
+        
+        <div class="user_input mb-16 mt-12">
+            <h1 class="text-3xl tracking-tighter mb-3">Edit User</h1>
+            <form class="flex gap-3" action="/update/<%= toBeEdit._id %>" method="post">
+                <input class="px-5 py-2 border-2 bg-[#2D3250] border-[#F8EDE3] text-[#F8EDE3] outline-none rounded-lg" required name="name" type="text" placeholder="Name" value="<%= toBeEdit.name %>">
+                <input class="px-5 py-2 border-2 bg-[#2D3250] border-[#F8EDE3] text-[#F8EDE3] outline-none rounded-lg" required name="email" type="email" placeholder="Email" value="<%= toBeEdit.email %>" >
+                <input class="px-5 py-2 border-2 bg-[#2D3250] border-[#F8EDE3] text-[#F8EDE3] outline-none rounded-lg" required name="imageUrl" type="url" placeholder="Image URL" value="<%= toBeEdit.image %>">
+                <button class="px-5 py-2 bg-[#FDDE55] rounded-lg text-[#2D3250] text-lg">Edit</button>
+            </form>
+        </div>
+
+        <hr>
+
+        <div class="my-10 w-full flex justify-center">
+            <div class="w-72 bg-[#7077A1] rounded-lg p-5">
+                <div class="img w-full h-80 bg-[#fff] rounded-lg overflow-hidden"><img class="w-full h-full object-cover" src="<%= toBeEdit.image %>"></div>
+                <h1 class="text-2xl mt-3 text-[#FEFBD8]"><%= toBeEdit.name %></h1>
+                <h1 class="text-md tracking-tighter text-[#FEFBD8]"><%= toBeEdit.email %></h1>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
